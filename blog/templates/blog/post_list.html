@@ -6,17 +6,21 @@
         <div>
             <h1><a href="/">Django Girls Blog</a></h1>
         </div>
-
+    {% for post in posts %}
         <div>
-            <p>published: 14.06.2014, 12:14</p>
-            <h2><a href="">My first post</a></h2>
-            <p>“Huzur Sitesi” İzmir, Göztepe’de denize yakın, şık bir site. Sitede 4 tane apartman var. Her apartmanda 10 tane daire bulunuyor. Mert, Kamelya Apartmanı’nda asansörde ve oldukça gergin.</p>
+            <p>published: {{ post.published_date }}</p>
+            <h2><a href="">{{ post.title }}</a></h2>
+            <!-- <p>“Huzur Sitesi” İzmir, Göztepe’de denize yakın, şık bir site. Sitede 4 tane apartman var. Her apartmanda 10 tane daire bulunuyor. Mert, Kamelya Apartmanı’nda asansörde ve oldukça gergin.</p> -->
+            <p>{{ post.text|linebreaksbr }}</p>
         </div>
-
+    {% endfor %}
+    {% for post in posts %}
         <div>
-            <p>published: 14.06.2014, 12:14</p>
-            <h2><a href="">My second post</a></h2>
-            <p>Sönük bir sigara ile oynuyor ve güneş gözlükleri hala gözünde. Yanında Adalet Hanım var, yaşlı bir komşusu. Asansördeki düğmelerin hepsine, hızlı hızlı ve üst üste basıyor.</p>
+            <p>published: {{ post.published_date }}</p>
+            <h2><a href="">{{ post.title }}</a></h2>
+            <!-- <p>Sönük bir sigara ile oynuyor ve güneş gözlükleri hala gözünde. Yanında Adalet Hanım var, yaşlı bir komşusu. Asansördeki düğmelerin hepsine, hızlı hızlı ve üst üste basıyor.</p> -->
+            <p>{{ post.text|linebreaksbr }}</p>
         </div>
+    {% endfor %}
     </body>
 </html>
